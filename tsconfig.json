@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5", // Target ES5 for wider compatibility across environments
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,14 +8,16 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "commonjs", // CommonJS for compatibility with Node.js and bundlers
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-native",
-    "types": ["nativewind/types"] // Add this line to include NativeWind types
+    "declaration": true, // Generate .d.ts files
+    "declarationDir": "./dist", // Put declaration files in dist
+    "outDir": "./dist", // Output JavaScript files to dist folder
+    "jsx": "react-native", // Use React Native JSX syntax
+    "types": ["nativewind/types"] // Include NativeWind types
   },
-  "include": ["src", "App.tsx"], // Make sure your source files are included
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"], // Include all files in src folder
+  "exclude": ["node_modules"] // Exclude node_modules from being compiled
 }
